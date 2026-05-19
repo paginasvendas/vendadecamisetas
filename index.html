@@ -272,7 +272,7 @@
 
         #sabores {
             display: flex;
-            flex-direction: column;
+            JUSTIFY-CONTENT: space-around;
             gap: 10px;
         }
 
@@ -1068,6 +1068,12 @@
             gap: 5px;
         }
 
+
+        table {
+    width: 100%;
+    color: #000;
+}
+
         div.eapps-widget {
             position: relative;
             margin-left: auto !important;
@@ -1272,6 +1278,12 @@
                 color: #4c0c00;
             }
         }
+
+#btnCompartilhar {
+    display: none;
+}
+
+
     </style>
 </head>
 
@@ -1299,231 +1311,101 @@
 
                         <span id="fecharCardapio" class="fechar">&times;</span>
 
-                        <!-- AO LEITE 50% (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Ao Leite 50%" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Ao Leite 50%</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, choc granule, cacau
-                                    50%</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- BEIJINHO -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Beijinho (Coco)" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Beijinho (Coco)</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, coco</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- CAFÉ -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Café" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Café</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, cacau 50%, café</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- CAJUZINHO -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Cajuzinho" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Cajuzinho</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, cacau 50%, amendoim
-                                    torrado</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- CARAMELO (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Caramelo" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Caramelo</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, açúcar</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- CASADINHO -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Casadinho" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Casadinho</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, Nescau, leite em pó
-                                </p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- CHOCOBOL (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Chocobol" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Chocobol</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, Chocobol, Nescau</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- CHURROS (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Churros" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Churros</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, doce de leite</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- COCO QUEIMADO -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Coco Queimado" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Coco Queimado</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, coco queimado</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- FERRERO (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Ferrero" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Ferrero</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, Nescau, Nutella</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- M&M (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="M&M" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">M&M</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, M&M, Nescau</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- MEIO AMARGO (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Meio Amargo" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Meio Amargo</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, chocolate granule,
-                                    cacau 70%</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- NAPOLITANO (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Napolitano" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Napolitano</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, Nescau, Nesquik, leite
-                                    em pó</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- NESCAU -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Nescau" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Nescau</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, granulado, Nescau</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- NESQUIK -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Nesquik" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Nesquik</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, açúcar colorido,
-                                    Nesquik</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- NINHO -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Ninho" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Ninho</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, leite em pó</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- NINHO + NUTELLA (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Ninho + Nutella" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Ninho + Nutella</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, leite em pó, Nutella
-                                </p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- PAÇOCA -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Paçoca" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Paçoca</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, paçoca</p>
-                                <p class="produto-valor" data-valor="1.70">R$ 1,70</p>
-                            </div>
-                        </div>
-
-                        <!-- PRESTÍGIO (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Prestigio" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Prestigio</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, Nescau, coco ralado
-                                </p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-                        <!-- ROMEU JULIETA (ESPECIAL) -->
-                        <div class="produto-card">
-                            <img src="https://via.placeholder.com/150" alt="Romeu Julieta" class="produto-img">
-                            <div class="produto-info">
-                                <h3 class="produto-nome">Romeu Julieta</h3>
-                                <p class="produto-ingredientes">Leite condensado, creme de leite, queijo parmesão,
-                                    goiabada</p>
-                                <p class="produto-valor especial" data-valor="2.00">R$ 2,00 <i
-                                        class="fas fa-star">Especial</i></p>
-                            </div>
-                        </div>
-
-
-
-
-
+                        
                         <!-- Adicione mais produtos aqui -->
+                        <div class="tabela-responsiva" style="padding:20px; overflow-x:auto; text-align:center;">
+
+    <img 
+        src="https://cdn.awsli.com.br/2297/2297081/arquivos/Screenshot_20230601-151922-913.png"
+        alt="Descrição da imagem"
+        style="width:100%; max-width:300px; display:block; margin:0 auto 20px;"
+    >
+
+    <!-- TABELA CAMISETAS -->
+
+    <table style="margin:20px auto; border-collapse:collapse; width:100%; max-width:600px;">
+
+        <caption style="font-size:18px; font-weight:bold; margin-bottom:10px;">
+            Medidas Camisetas
+        </caption>
+
+        <tbody>
+
+            <tr>
+                <th style="padding:8px; border:1px solid #ccc; background:#000;color: #fff;"></th>
+
+                <th style="padding:8px; border:1px solid #ccc; background:#000;color: #fff;">
+                    Tamanhos
+                </th>
+
+                <th style="padding:8px; border:1px solid #ccc; background:#000;color: #fff;">
+                    P
+                </th>
+
+                <th style="padding:8px; border:1px solid #ccc; background:#000;color: #fff;">
+                    M
+                </th>
+
+                <th style="padding:8px; border:1px solid #ccc; background:#000;color: #fff;">
+                    G
+                </th>
+
+                <th style="padding:8px; border:1px solid #ccc; background:#000;color: #fff;">
+                    GG
+                </th>
+            </tr>
+
+            <tr>
+                <td style="padding:8px; border:1px solid #ccc;">A</td>
+
+                <td style="padding:8px; border:1px solid #ccc; word-break:break-word;">
+                    Comprimento
+                </td>
+
+                <td style="padding:8px; border:1px solid #ccc;">70</td>
+                <td style="padding:8px; border:1px solid #ccc;">72</td>
+                <td style="padding:8px; border:1px solid #ccc;">74</td>
+                <td style="padding:8px; border:1px solid #ccc;">76</td>
+            </tr>
+
+            <tr>
+                <td style="padding:8px; border:1px solid #ccc;">B</td>
+
+                <td style="padding:8px; border:1px solid #ccc; word-break:break-word;">
+                    Manga
+                </td>
+
+                <td style="padding:8px; border:1px solid #ccc;">20</td>
+                <td style="padding:8px; border:1px solid #ccc;">21</td>
+                <td style="padding:8px; border:1px solid #ccc;">22</td>
+                <td style="padding:8px; border:1px solid #ccc;">23</td>
+            </tr>
+
+            <tr>
+                <td style="padding:8px; border:1px solid #ccc;">C</td>
+
+                <td style="padding:8px; border:1px solid #ccc; word-break:break-word;">
+                    Torax
+                </td>
+
+                <td style="padding:8px; border:1px solid #ccc;">52</td>
+                <td style="padding:8px; border:1px solid #ccc;">54</td>
+                <td style="padding:8px; border:1px solid #ccc;">56</td>
+                <td style="padding:8px; border:1px solid #ccc;">58</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+    <p style="text-align:center; font-size:12px; margin-top:15px;">
+        OBS: Pode haver variação de +/- 1 centímetro
+    </p>
+
+</div>
+
+
                     </div>
                 </div>
 
@@ -1581,7 +1463,7 @@
 
                 <div class="top-bar">
                     <button id="btnHorario" onclick="abrirHorario()">Horários</button>
-                    <button id="abrirCardapioBtn">Cardápio</button>
+                    <button id="abrirCardapioBtn">Tabela medidas</button>
                 </div>
 
                 <div class="cart-icon" onclick="abrirCarrinho()">
@@ -1595,11 +1477,11 @@
         <div class="banner-container swiper desktop">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="https://github.com/bomdoce/gerenciamentodedespesas/blob/main/WhatsApp%20Image%202026-02-14%20at%2023.36.49%20(1).jpeg?raw=true"
+                    <img src="https://cdn.awsli.com.br/2297/2297081/arquivos/camiseta-de-qualidade.png"
                         alt="Banner Desktop 1">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://github.com/bomdoce/gerenciamentodedespesas/blob/main/WhatsApp%20Image%202026-02-14%20at%2023.36.49%20(3).jpeg?raw=true"
+                    <img src="https://cdn.awsli.com.br/2297/2297081/arquivos/oferta-exclusiva.png"
                         alt="Banner Desktop 1">
                 </div>
             </div>
@@ -1613,11 +1495,11 @@
         <div class="banner-container swiper mobile">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="https://github.com/bomdoce/gerenciamentodedespesas/blob/main/WhatsApp%20Image%202026-02-14%20at%2023.36.49%20(2).jpeg?raw=true"
+                    <img src="https://cdn.awsli.com.br/2297/2297081/arquivos/frete-gr-tis-mobile.png"
                         alt="Banner Mobile 1">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://github.com/bomdoce/gerenciamentodedespesas/blob/main/WhatsApp%20Image%202026-02-14%20at%2023.36.49.jpeg?raw=true"
+                    <img src="https://cdn.awsli.com.br/2297/2297081/arquivos/camiseta-de-qualidade-mobile.png"
                         alt="Banner Mobile 1">
                 </div>
             </div>
@@ -1632,27 +1514,27 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><a href="#"><img
                             src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173888215067a53c6650921_75_75.jpeg?raw=true">
-                        <p>Sortidos</p>
+                        <p>Metallica</p>
                     </a></div>
                 <div class="swiper-slide"><a href="#"><img
                             src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173880359867a4098ee9854_75_75.jpeg?raw=true">
-                        <p>Tradicionais</p>
+                        <p>Iron Maiden</p>
                     </a></div>
                 <div class="swiper-slide"><a href="#"><img
                             src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/WhatsApp%20Image%202025-02-05%20at%2022.39.41.jpeg?raw=true">
-                        <p>Gourmet</p>
+                        <p>AC/DC</p>
                     </a></div>
                 <div class="swiper-slide"><a href="#"><img
                             src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/173914123067a9306e97c72_75_75.jpeg?raw=true">
-                        <p>Temáticos</p>
+                        <p>Guns n'Roses</p>
                     </a></div>
                 <div class="swiper-slide"><a href="#"><img
                             src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/caixa-para-bombons-com-berco-marrom-cristal-san-felipo-embalagens-4.jpg?raw=true">
-                        <p>Presentes com sabor</p>
+                        <p>Nirvana</p>
                     </a></div>
                 <div class="swiper-slide"><a href="#"><img
                             src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/e6663392782603.5e5440530b25a.png?raw=true">
-                        <p>Ofertas</p>
+                        <p>CPM22</p>
                     </a></div>
             </div>
 
@@ -1662,45 +1544,44 @@
         </div>
 
         <div class="container-cards">
-            <div class="card" onclick="selecionarProduto('Caixa c/ 08 unidades')">
+            <div class="card" onclick="selecionarProduto('CAMISETA NIRVANA')">
 
-                <!-- SLIDER -->
+                <!-- CAIXA 08 -->
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <img src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173871712067a2b7c020f7e_75_75.jpeg?raw=true"
-                                alt="Caixa c/ 08 unidades">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente-n6nm2m6dx5.png"
+                                alt="CAMISETA NIRVANA">
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173872240667a2cc662dead_75_75.jpeg?raw=true"
-                                alt="Caixa c/ 08 unidades">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
+                                alt="CAMISETA NIRVANA">
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173888215067a53c6650921_75_75.jpeg?raw=true"
-                                alt="Caixa c/ 08 unidades">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente--flo2m3rm8a.png"
+                                alt="CAMISETA NIRVANA">
                         </div>
 
                     </div>
 
-                    <!-- bolinhas -->
+                    
                     <div class="swiper-pagination"></div>
                 </div>
 
-                <!-- INFO -->
+                
                 <div class="info">
-                    <p class="nome-produto">CAIXA C/ 08 UNIDADES</p>
-                    <span>Até 2 Sabores</span>
-                    <p class="preco"><span>A partir</span> R$13,00</p>
+                    <p class="nome-produto">CAMISETA NIRVANA</p>
+                    <p class="preco"><span>Preço</span> R$13,00</p>
                 </div>
 
             </div>
 
 
             <!-- CAIXA 12 -->
-            <div class="card" onclick="selecionarProduto('Caixa c/ 12 unidades')">
+            <div class="card" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
 
                 <div class="etiqueta">+ Vendido</div>
 
@@ -1708,13 +1589,18 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <img src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173872240667a2cc662dead_75_75.jpeg?raw=true"
-                                alt="Caixa c/ 12 unidades">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente-n6nm2m6dx5.png"
+                                alt="CAMISETA IRON MAIDEN">
                         </div>
 
                         <div class="swiper-slide">
-                            <img
-                                src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173871712067a2b7c020f7e_75_75.jpeg?raw=true">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
+                                alt="CAMISETA IRON MAIDEN">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente--flo2m3rm8a.png"
+                                alt="CAMISETA IRON MAIDEN">
                         </div>
 
                     </div>
@@ -1723,15 +1609,14 @@
                 </div>
 
                 <div class="info">
-                    <p class="nome-produto">CAIXA C/ 12 UNIDADES</p>
-                    <span>Até 3 Sabores</span>
-                    <p class="preco"><span>A partir</span> R$20,00</p>
+                    <p class="nome-produto">CAMISETA IRON MAIDEN</p>
+                    <p class="preco"><span>Preço</span> R$20,00</p>
                 </div>
             </div>
 
 
             <!-- CAIXA 15 -->
-            <div class="card" onclick="selecionarProduto('Caixa c/ 15 unidades')">
+            <div class="card" onclick="selecionarProduto('CAMISETA PINK')">
 
                 <div class="etiqueta-nov">Novidade</div>
 
@@ -1739,13 +1624,18 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <img src="https://github.com/bomdoce/gerenciamentodedespesas/blob/main/WhatsApp%20Image%202026-02-16%20at%2011.44.13.jpeg?raw=true"
-                                alt="Caixa c/ 15 unidades">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente-n6nm2m6dx5.png"
+                                alt="CAMISETA GUNS N' ROSES">
                         </div>
 
                         <div class="swiper-slide">
-                            <img
-                                src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173871712067a2b7c020f7e_75_75.jpeg?raw=true">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
+                                alt="CAMISETA PINK">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente--flo2m3rm8a.png"
+                                alt="CAMISETA GUNS N' ROSES">
                         </div>
 
                     </div>
@@ -1754,27 +1644,31 @@
                 </div>
 
                 <div class="info">
-                    <p class="nome-produto">CAIXA C/ 15 UNIDADES</p>
-                    <span>Até 4 Sabores</span>
-                    <p class="preco"><span>A partir</span> R$26,00</p>
+                    <p class="nome-produto">CAMISETA GUNS N' ROSES</p>
+                    <p class="preco"><span>Preço</span> R$26,00</p>
                 </div>
             </div>
 
 
             <!-- CAIXA 30 -->
-            <div class="card" onclick="selecionarProduto('Caixa c/ 30 unidades')">
+            <div class="card" onclick="selecionarProduto('CAMISETA KORN')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <img src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173888215067a53c6650921_75_75.jpeg?raw=true"
-                                alt="Caixa c/ 30 unidades">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente-n6nm2m6dx5.png"
+                                alt="CAMISETA KORN">
                         </div>
 
                         <div class="swiper-slide">
-                            <img
-                                src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173879875267a3f6a0d0631_75_75.jpeg?raw=true">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
+                                alt="CAMISETA KORN">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente--flo2m3rm8a.png"
+                                alt="CAMISETA KORN">
                         </div>
 
                     </div>
@@ -1783,28 +1677,32 @@
                 </div>
 
                 <div class="info">
-                    <p class="nome-produto">CAIXA C/ 30 UNIDADES</p>
-                    <span>Até 5 Sabores</span>
-                    <p class="preco"><span>A partir</span> R$50,00</p>
+                    <p class="nome-produto">CAMISETA KORN</p>
+                    <p class="preco"><span>Preço</span> R$50,00</p>
                 </div>
             </div>
 
 
             <!-- CAIXA 50 -->
-            <div class="card" onclick="selecionarProduto('Caixa c/ 50 unidades')">
+            <div class="card" onclick="selecionarProduto('CAMISETA CPM22')">
 
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <img src="https://github.com/bomdoce/gerenciamentodedespesas/blob/main/IMG_20260124_121647_907.webp?raw=true"
-                                alt="Caixa c/ 50 unidades">
+                                                <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente-n6nm2m6dx5.png"
+                                alt="CAMISETA CPM22">
                         </div>
 
                         <div class="swiper-slide">
-                            <img
-                                src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173871712067a2b7c020f7e_75_75.jpeg?raw=true">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
+                                alt="CAMISETA CPM22">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente--flo2m3rm8a.png"
+                                alt="CAMISETA CPM22">
                         </div>
 
                     </div>
@@ -1813,28 +1711,32 @@
                 </div>
 
                 <div class="info">
-                    <p class="nome-produto">CAIXA C/ 50 UNIDADES</p>
-                    <span>Até 7 Sabores</span>
-                    <p class="preco"><span>A partir</span> R$85,00</p>
+                    <p class="nome-produto">CAMISETA CPM22</p>
+                    <p class="preco"><span>Preço</span> R$85,00</p>
                 </div>
             </div>
 
 
 
             <!-- CAIXA 100 -->
-            <div class="card" onclick="selecionarProduto('Caixa c/ 100 unidades')">
+            <div class="card" onclick="selecionarProduto('CAMISETA LINK PARK')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <img src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173879875267a3f6a0d0631_75_75.jpeg?raw=true"
-                                alt="Caixa c/ 100 unidades">
+                                                                        <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente-n6nm2m6dx5.png"
+                                alt="CAMISETA LINK PARK">
                         </div>
 
                         <div class="swiper-slide">
-                            <img
-                                src="https://github.com/PauloTalamini/gerenciamentodedespesas/blob/main/docs/173888215067a53c6650921_75_75.jpeg?raw=true">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
+                                alt="CAMISETA LINK PARK">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-frente--flo2m3rm8a.png"
+                                alt="CAMISETA LINK PARK">
                         </div>
 
                     </div>
@@ -1843,19 +1745,13 @@
                 </div>
 
                 <div class="info">
-                    <p class="nome-produto">CAIXA C/ 100 UNIDADES</p>
-                    <span>Até 10 Sabores</span>
-                    <p class="preco"><span>A partir</span> R$170,00</p>
+                    <p class="nome-produto">CAMISETA LINK PARK</p>
+                    <p class="preco"><span>Preço</span> R$170,00</p>
                 </div>
             </div>
 
         </div>
 
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<div id="reviewsHome">
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-321ec82b-703a-4b47-910e-d1a64849c74b" data-elfsight-app-lazy></div>
-</div>
 
         <footer class="footer">
             <div class="footer-container">
@@ -1943,112 +1839,34 @@
         </div>
 
         <div class="quantidadeSabores">
-            <span>Selecionar os sabores</span>
-            <span id="contadorSabores" style="font-weight:bold;">0 / 0</span>
+            <span>Selecionar os Tamanhos</span>
         </div>
 
         <div id="sabores">
             <label>
-                <input type="checkbox" value="Ao Leite 50%" data-preco="2.00" data-especial="true">
-                Ao Leite 50% <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
+                <input type="checkbox" value="Tamanho P" data-preco="2.00">
+                P
             </label>
 
             <label>
-                <input type="checkbox" value="Beijinho (Coco)" data-preco="1.70">
-                Beijinho (Coco)
+                <input type="checkbox" value="Tamanho M" data-preco="1.70">
+                M
             </label>
 
             <label>
-                <input type="checkbox" value="Café" data-preco="1.70">
-                Café
+                <input type="checkbox" value="Tamanho G" data-preco="1.70">
+                G
             </label>
 
             <label>
-                <input type="checkbox" value="Cajuzinho" data-preco="1.70">
-                Cajuzinho
+                <input type="checkbox" value="Tamanho GG" data-preco="1.70">
+                GG
             </label>
 
             <label>
-                <input type="checkbox" value="Caramelo" data-preco="2.00" data-especial="true">
-                Caramelo <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
+                <input type="checkbox" value="Tamanho XGG" data-preco="2.00">
+                XGG
             </label>
-
-            <label>
-                <input type="checkbox" value="Casadinho" data-preco="1.70">
-                Casadinho
-            </label>
-
-            <label>
-                <input type="checkbox" value="Chocobol" data-preco="2.00" data-especial="true">
-                Chocobol <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Churros" data-preco="2.00" data-especial="true">
-                Churros <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Coco Queimado" data-preco="1.70">
-                Coco Queimado
-            </label>
-
-            <label>
-                <input type="checkbox" value="Ferrero" data-preco="2.00" data-especial="true">
-                Ferrero <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="M&M" data-preco="2.00" data-especial="true">
-                M&M <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Meio Amargo" data-preco="2.00" data-especial="true">
-                Meio Amargo <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Napolitano" data-preco="2.00" data-especial="true">
-                Napolitano <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Nescau" data-preco="1.70">
-                Nescau
-            </label>
-
-            <label>
-                <input type="checkbox" value="Nesquik" data-preco="1.70">
-                Nesquik
-            </label>
-
-            <label>
-                <input type="checkbox" value="Ninho" data-preco="1.70">
-                Ninho
-            </label>
-
-            <label>
-                <input type="checkbox" value="Ninho + Nutella" data-preco="2.00" data-especial="true">
-                Ninho + Nutella <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Paçoca" data-preco="1.70">
-                Paçoca
-            </label>
-
-            <label>
-                <input type="checkbox" value="Prestigio" data-preco="2.00" data-especial="true">
-                Prestigio <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-            <label>
-                <input type="checkbox" value="Romeu Julieta" data-preco="2.00" data-especial="true">
-                Romeu Julieta <span class="especial"><i class="fas fa-star especial"></i> Especial</span>
-            </label>
-
-
 
         </div>
 
@@ -2500,8 +2318,6 @@
 
             carrinho.forEach((item, index) => {
                 let quantidadeProduto = item.sabores.reduce((t, s) => t + s.quantidade, 0);
-                let maxMatch = item.produto.match(/\d+/);
-                let quantidadeMax = maxMatch ? parseInt(maxMatch[0]) : 0;
 
                 totalPedido += item.precoTotal;
 
@@ -2528,8 +2344,7 @@
 
                                 <span>${s.quantidade}</span>
 
-                                <button onclick="ajustarQuantidadeSabor(${index},${i},1)"
-                                    ${quantidadeProduto >= quantidadeMax ? "disabled" : ""}>+</button>
+                                <button onclick="ajustarQuantidadeSabor(${index},${i},1)">+</button>
                             </div>
 
                             <button onclick="removerSabor(${index},${i})"style="background: none; border: none;color: red;cursor: pointer;font-size: 1.2em;vertical-align: middle;margin-left: 5px;padding:0;">✖</button>
@@ -2538,11 +2353,11 @@
                     `).join("")}
 
                     <button class="btnAdicionarSabor" onclick="abrirAdicionarSabor(${index})">
-                        + Adicionar mais sabores
+                        + Adicionar mais tamanhos
                     </button>
 
                     <div class="quantidadeEValor">
-                        <span class="badge">${quantidadeProduto} / ${quantidadeMax}</span>
+                        <span class="badge">${quantidadeProduto}</span>
                         <strong>R$ ${item.precoTotal.toFixed(2)}</strong>
                     </div>
                 </div>
@@ -2565,7 +2380,6 @@
             let maxMatch = produto.produto.match(/\d+/);
             let max = maxMatch ? parseInt(maxMatch[0]) : 0;
 
-            if (delta > 0 && atual >= max) return;
             if (delta < 0 && sabor.quantidade === 1) return;
 
             sabor.quantidade += delta;
@@ -3141,27 +2955,12 @@ document.getElementById("chavePix").innerText = pixCode;
 
 
 
-        // ===== LIMITADOR DE SABORES POR CAIXA =====
-        let limiteSabores = 0;
-
-        function definirLimitePorProduto(nomeProduto) {
-            if (nomeProduto.includes("08")) limiteSabores = 2;
-            else if (nomeProduto.includes("12")) limiteSabores = 3;
-            else if (nomeProduto.includes("15")) limiteSabores = 4;
-            else if (nomeProduto.includes("30")) limiteSabores = 5;
-            else if (nomeProduto.includes("50")) limiteSabores = 7;
-            else if (nomeProduto.includes("100")) limiteSabores = 10;
-            else limiteSabores = 0;
-
-            const contador = document.getElementById("contadorSabores");
-            if (contador) contador.innerText = `0 / ${limiteSabores}`;
-        }
 
         // Intercepta sua função original sem quebrar
         const selecionarProdutoOriginal = selecionarProduto;
         selecionarProduto = function (nomeProduto) {
             selecionarProdutoOriginal(nomeProduto);
-            definirLimitePorProduto(nomeProduto);
+  
 
             const checkboxes = document.querySelectorAll("#sabores input[type=checkbox]");
             checkboxes.forEach(cb => {
@@ -3170,29 +2969,26 @@ document.getElementById("chavePix").innerText = pixCode;
             });
         };
 
+
+
+
+
+
         document.addEventListener("change", function (e) {
-            if (!e.target.matches("#sabores input[type=checkbox]")) return;
+    if (!e.target.matches("#sabores input[type=checkbox]")) return;
 
-            const checkboxes = document.querySelectorAll("#sabores input[type=checkbox]");
-            const selecionados = Array.from(checkboxes).filter(cb => cb.checked);
+    const checkboxes = document.querySelectorAll("#sabores input[type=checkbox]");
+    const selecionados = Array.from(checkboxes).filter(cb => cb.checked);
 
-            if (selecionados.length > limiteSabores) {
-                e.target.checked = false;
-                alert(`Você pode escolher no máximo ${limiteSabores} sabores.`);
-                return;
-            }
+    const contador = document.getElementById("contadorSabores");
 
-            const contador = document.getElementById("contadorSabores");
-            if (contador) contador.innerText = `${selecionados.length} / ${limiteSabores}`;
+    if (contador) {
+        contador.innerText = `${selecionados.length} sabores`;
+    }
+});
 
-            if (selecionados.length === limiteSabores) {
-                checkboxes.forEach(cb => {
-                    if (!cb.checked) cb.disabled = true;
-                });
-            } else {
-                checkboxes.forEach(cb => cb.disabled = false);
-            }
-        });
+
+
 
 
 
