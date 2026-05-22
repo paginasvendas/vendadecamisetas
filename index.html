@@ -1543,9 +1543,7 @@ width: 100px;
         </div>
 
         <div class="container-cards">
-            <div class="card"
-                data-preco="13.00"
-                onclick="selecionarProduto('CAMISETA NIRVANA', this)">
+            <div class="card" onclick="selecionarProduto('CAMISETA NIRVANA')">
 
                 <!-- CAIXA 08 -->
                 <div class="swiper produtoSwiper">
@@ -1582,9 +1580,7 @@ width: 100px;
 
 
             <!-- CAIXA 12 -->
-            <div class="card"
-                data-preco="13.00"
-                onclick="selecionarProduto('CAMISETA IRON MAIDEN', this)">
+            <div class="card" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
 
                 <div class="etiqueta">+ Vendido</div>
 
@@ -1619,9 +1615,7 @@ width: 100px;
 
 
             <!-- CAIXA 15 -->
-            <div class="card"
-                data-preco="13.00"
-                onclick="selecionarProduto('CAMISETA GUNS N' ROSES', this)">
+            <div class="card" onclick="selecionarProduto('CAMISETA PINK')">
 
                 <div class="etiqueta-nov">Novidade</div>
 
@@ -1635,7 +1629,7 @@ width: 100px;
 
                         <div class="swiper-slide">
                             <img src="https://cdn.awsli.com.br/600x1000/2297/2297081/produto/257519523/camiseta-bemii-music-is-life-azul-marinho-costa-6o2bcrkyra.png"
-                                alt="CAMISETA GUNS N' ROSES">
+                                alt="CAMISETA PINK">
                         </div>
 
                         <div class="swiper-slide">
@@ -1656,9 +1650,7 @@ width: 100px;
 
 
             <!-- CAIXA 30 -->
-            <div class="card"
-                data-preco="13.00"
-                onclick="selecionarProduto('CAMISETA KORN', this)">
+            <div class="card" onclick="selecionarProduto('CAMISETA KORN')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
@@ -1691,9 +1683,7 @@ width: 100px;
 
 
             <!-- CAIXA 50 -->
-            <div class="card"
-                data-preco="13.00"
-                onclick="selecionarProduto('CAMISETA CPM22', this)">
+            <div class="card" onclick="selecionarProduto('CAMISETA CPM22')">
 
 
                 <div class="swiper produtoSwiper">
@@ -1728,9 +1718,7 @@ width: 100px;
 
 
             <!-- CAIXA 100 -->
-            <<div class="card"
-                data-preco="13.00"
-                onclick="selecionarProduto('CAMISETA LINK PARK', this)">
+            <div class="card" onclick="selecionarProduto('CAMISETA LINK PARK')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
@@ -1855,29 +1843,29 @@ width: 100px;
 
         <div id="sabores">
             <label>
-    <input type="checkbox" value="Tamanho P">
-    P
-</label>
+                <input type="checkbox" value="Tamanho P" data-preco="2.00">
+                P
+            </label>
 
-<label>
-    <input type="checkbox" value="Tamanho M">
-    M
-</label>
+            <label>
+                <input type="checkbox" value="Tamanho M" data-preco="1.70">
+                M
+            </label>
 
-<label>
-    <input type="checkbox" value="Tamanho G">
-    G
-</label>
+            <label>
+                <input type="checkbox" value="Tamanho G" data-preco="1.70">
+                G
+            </label>
 
-<label>
-    <input type="checkbox" value="Tamanho GG">
-    GG
-</label>
+            <label>
+                <input type="checkbox" value="Tamanho GG" data-preco="1.70">
+                GG
+            </label>
 
-<label>
-    <input type="checkbox" value="Tamanho XGG">
-    XGG
-</label>
+            <label>
+                <input type="checkbox" value="Tamanho XGG" data-preco="2.00">
+                XGG
+            </label>
 
         </div>
 
@@ -2175,10 +2163,6 @@ width: 100px;
                 document.getElementById("produtoImagem").src = card.querySelector("img").src;
             }
 
-            const precoProduto = card.dataset.preco;
-document.getElementById("produtoSelecionado")
-    .dataset.preco = precoProduto;
-
             //ESCONDE O STATUS
             document.getElementById("statusAbertoFechado")
                 ?.classList.add("hidden");
@@ -2238,7 +2222,7 @@ document.getElementById("produtoSelecionado")
             }
 
             saboresSelecionados.forEach(sabor => {
-                let preco = precoProduto;
+                let preco = parseFloat(sabor.dataset.preco);
 
                 // 🔥 Se estiver editando, tenta reaproveitar a quantidade antiga
                 let quantidade = 1;
@@ -2273,10 +2257,6 @@ document.getElementById("produtoSelecionado")
                     imagemProduto
                 });
             }
-
-            let preco = parseFloat(
-    document.getElementById("produtoSelecionado").dataset.preco
-);
 
             salvarCarrinho();
             atualizarCarrinho();
