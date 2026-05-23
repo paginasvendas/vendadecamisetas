@@ -683,13 +683,13 @@ width: 100px;
 
         .top-bar {
             display: flex;
-            gap: 30px;
+            gap: 10px;
             padding: 10px;
             position: sticky;
         }
 
         .top-bar button {
-            padding: 5px 10px;
+            padding: 8px 12px;
             cursor: pointer;
             font-weight: bold;
             background: #000;
@@ -1285,6 +1285,32 @@ width: 100px;
 }
 
 
+/* =========================
+MENU BANDAS
+========================= */
+
+.top-bar{
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+}
+
+#selectBandas{
+    background:#000;
+    color:#fff;
+    font-weight: bold;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    outline:none;
+    width: 100%;
+}
+
+#selectBandas option{
+    background:#111;
+    color:#fff;
+}
+
     </style>
 </head>
 
@@ -1299,8 +1325,6 @@ width: 100px;
                 <a href="#" class="home-icon" onclick="voltarHome()">
                     <i class="fas fa-home"></i>
                 </a>
-
-
 
                 <!-- POPUP DO CARDÁPIO -->
                 <div id="cardapioPopup" class="popup hidden">
@@ -1410,6 +1434,8 @@ width: 100px;
                     </div>
                 </div>
 
+                
+
                 <!-- POPUP HORÁRIO DE FUNCIONAMENTO -->
                 <div id="horarioPopup" class="popup hidden">
                     <div class="popup-content horario-popup">
@@ -1460,11 +1486,36 @@ width: 100px;
                     <div id="statusAbertoFechado" class="status-indicador">...</div>
                 </div>
 
+                
+
 
 
                 <div class="top-bar">
+                        <select id="selectBandas" onchange="filtrarProdutos()">
+
+        <option value="todos">Bandas</option>
+
+        <option value="nirvana">Nirvana</option>
+
+        <option value="iron maiden">Iron Maiden</option>
+
+        <option value="metallica">Metallica</option>
+
+        <option value="pink">Pink Floyd</option>
+
+        <option value="ac/dc">AC/DC</option>
+
+        <option value="black sabbath">Black Sabbath</option>
+
+        <option value="korn">Korn</option>
+
+        <option value="cpm22">CPM22</option>
+
+        <option value="link park">Linkin Park</option>
+
+    </select>
                     <button id="btnHorario" onclick="abrirHorario()">Horários</button>
-                    <button id="abrirCardapioBtn">Tabela medidas</button>
+                    <button id="abrirCardapioBtn">Medidas</button>
                 </div>
 
                 <div class="cart-icon" onclick="abrirCarrinho()">
@@ -1545,7 +1596,7 @@ width: 100px;
         </div>
 
         <div class="container-cards">
-            <div class="card" onclick="selecionarProduto('CAMISETA NIRVANA')">
+           <div class="card" data-banda="nirvana" onclick="selecionarProduto('CAMISETA NIRVANA')">
 
                 <!-- CAIXA 08 -->
                 <div class="swiper produtoSwiper">
@@ -1582,7 +1633,7 @@ width: 100px;
 
 
             <!-- CAIXA 12 -->
-            <div class="card" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
+            <div class="card" data-banda="CAMISETA IRON MAIDEN" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
 
                 <div class="etiqueta">+ Vendido</div>
 
@@ -1617,7 +1668,7 @@ width: 100px;
 
 
             <!-- CAIXA 15 -->
-            <div class="card" onclick="selecionarProduto('CAMISETA PINK')">
+            <div class="card" data-banda="CAMISETA PINK" onclick="selecionarProduto('CAMISETA PINK')">
 
                 <div class="etiqueta-nov">Novidade</div>
 
@@ -1652,7 +1703,7 @@ width: 100px;
 
 
             <!-- CAIXA 30 -->
-            <div class="card" onclick="selecionarProduto('CAMISETA KORN')">
+            <div class="card" data-banda="CAMISETA KORN" onclick="selecionarProduto('CAMISETA KORN')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
@@ -1685,7 +1736,7 @@ width: 100px;
 
 
             <!-- CAIXA 50 -->
-            <div class="card" onclick="selecionarProduto('CAMISETA CPM22')">
+            <div class="card" data-banda="CAMISETA CPM22" onclick="selecionarProduto('CAMISETA CPM22')">
 
 
                 <div class="swiper produtoSwiper">
@@ -1720,7 +1771,7 @@ width: 100px;
 
 
             <!-- CAIXA 100 -->
-            <div class="card" onclick="selecionarProduto('CAMISETA LINK PARK')">
+            <div class="card" data-banda="CAMISETA LINK PARK" onclick="selecionarProduto('CAMISETA LINK PARK')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
@@ -3210,6 +3261,46 @@ function gerarPixCopiaECola(valor) {
 
     return payloadFinal + crc;
 }
+
+
+/* =========================
+FILTRO BANDAS
+========================= */
+
+
+
+function filtrarProdutos() {
+
+    let filtro = document
+        .getElementById("selectBandas")
+        .value
+        .toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let nomeProduto = card
+            .innerText
+            .toLowerCase();
+
+        if (filtro === "todos") {
+
+            card.style.display = "block";
+
+        } else if (nomeProduto.includes(filtro)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
 
 
 
