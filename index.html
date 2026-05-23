@@ -2209,28 +2209,35 @@ width: 100px;
         /* =======================
         ADICIONAR AO CARRINHO
         ======================= */
-        function adicionarAoCarrinho() {
+function adicionarAoCarrinho() {
 
     let produto = document.getElementById('produtoNome').innerText;
-    let saboresSelecionados = document.querySelectorAll('#sabores input:checked');
+
+    let saboresSelecionados =
+        document.querySelectorAll('#sabores input:checked');
+
     let saboresNovos = [];
-    let imagemProduto = document.getElementById('produtoImagem').src;
+
+    let imagemProduto =
+        document.getElementById('produtoImagem').src;
 
     if (saboresSelecionados.length === 0) {
         alert("Escolha pelo menos um tamanho.");
         return;
     }
 
-    // 🔥 PEGA O CARD DO PRODUTO
-    const card = Array.from(document.querySelectorAll(".card")).find(c =>
-        c.getAttribute("onclick").includes(produto)
-    );
+    // 🔥 procura card do produto
+    const card = Array.from(document.querySelectorAll(".card"))
+        .find(c =>
+            c.getAttribute("onclick").includes(produto)
+        );
 
     let precoProduto = 0;
 
     if (card) {
 
-        const precoTexto = card.querySelector(".preco").innerText;
+        const precoTexto =
+            card.querySelector(".preco").innerText;
 
         precoProduto = parseFloat(
             precoTexto
@@ -2245,12 +2252,13 @@ width: 100px;
 
         let quantidade = 1;
 
-        // mantém quantidade ao editar
+        // mantém quantidade antiga ao editar
         if (produtoEditandoIndex !== null) {
 
-            const saborAntigo = carrinho[produtoEditandoIndex]
-                .sabores
-                .find(s => s.nome === sabor.value);
+            const saborAntigo =
+                carrinho[produtoEditandoIndex]
+                    .sabores
+                    .find(s => s.nome === sabor.value);
 
             if (saborAntigo) {
                 quantidade = saborAntigo.quantidade;
@@ -2265,22 +2273,23 @@ width: 100px;
         sabor.checked = false;
     });
 
-    // 🔥 QUANTIDADE TOTAL
-    const quantidadeTotal = saboresNovos.reduce(
+    // 🔥 quantidade total
+    let quantidadeTotal = saboresNovos.reduce(
         (t, s) => t + s.quantidade,
         0
     );
 
-    // 🔥 TOTAL PELO PRODUTO
-    const precoTotal = precoProduto * quantidadeTotal;
+    let precoTotal =
+        precoProduto * quantidadeTotal;
 
     if (produtoEditandoIndex !== null) {
 
-        carrinho[produtoEditandoIndex].sabores = saboresNovos;
-
-        carrinho[produtoEditandoIndex].precoUnitario = precoProduto;
-
-        carrinho[produtoEditandoIndex].precoTotal = precoTotal;
+        carrinho[produtoEditandoIndex] = {
+            ...carrinho[produtoEditandoIndex],
+            sabores: saboresNovos,
+            precoUnitario: precoProduto,
+            precoTotal: precoTotal
+        };
 
         produtoEditandoIndex = null;
 
@@ -2299,8 +2308,11 @@ width: 100px;
     atualizarCarrinho();
     atualizarContadorCarrinho();
 
-    document.getElementById('produtoSelecionado').classList.add('hidden');
-    document.getElementById('carrinho').classList.remove('hidden');
+    document.getElementById('produtoSelecionado')
+        .classList.add('hidden');
+
+    document.getElementById('carrinho')
+        .classList.remove('hidden');
 
     esconderHeaderCheckout();
     esconderFooter();
@@ -2410,22 +2422,26 @@ width: 100px;
         function ajustarQuantidadeSabor(produtoIndex, saborIndex, delta) {
 
     let produto = carrinho[produtoIndex];
+
     let sabor = produto.sabores[saborIndex];
 
-    // impede ficar menor que 1
-    if (delta < 0 && sabor.quantidade === 1) return;
+    // impede menor que 1
+    if (delta < 0 && sabor.quantidade === 1) {
+        return;
+    }
 
     // altera quantidade
     sabor.quantidade += delta;
 
-    // quantidade total do produto
+    // 🔥 soma total das quantidades
     let quantidadeTotal = produto.sabores.reduce(
         (t, s) => t + s.quantidade,
         0
     );
 
-    // 🔥 recalcula total
-    produto.precoTotal = quantidadeTotal * produto.precoUnitario;
+    // 🔥 recalcula total correto
+    produto.precoTotal =
+        quantidadeTotal * produto.precoUnitario;
 
     salvarCarrinho();
     atualizarCarrinho();
@@ -2438,20 +2454,20 @@ width: 100px;
     // remove tamanho
     produto.sabores.splice(saborIndex, 1);
 
-    // se não sobrou nenhum tamanho remove produto
+    // remove produto inteiro
     if (produto.sabores.length === 0) {
 
         carrinho.splice(produtoIndex, 1);
 
     } else {
 
-        // 🔥 recalcula quantidade total
+        // 🔥 recalcula quantidade
         let quantidadeTotal = produto.sabores.reduce(
             (t, s) => t + s.quantidade,
             0
         );
 
-        // 🔥 recalcula preço
+        // 🔥 recalcula valor
         produto.precoTotal =
             quantidadeTotal * produto.precoUnitario;
     }
