@@ -1491,21 +1491,15 @@ MENU BANDAS
 
 
 
-                <div class="top-bar">
-                        <select id="selectBandas" onchange="filtrarProdutos()">
+<div class="top-bar">
+    <select id="selectBandas" onchange="filtrarProdutos()">
 
-        <option value="todos">Bandas</option>
-
-        <option value="iron maiden">Iron Maiden</option>
-
-        <option value="metallica">Metallica</option>
-
-        <option value="GUNS IN ROSES">Guns In Roses</option>
-
-        <option value="ac/dc">AC/DC</option>
-
-        <option value="Ramones">Ramones</option>
-
+<option value="todos">Bandas</option>
+<option value="iron maiden">Iron Maiden</option>
+<option value="metallica">Metallica</option>
+<option value="guns in roses">Guns In Roses</option>
+<option value="ac/dc">AC/DC</option>
+<option value="ramones">Ramones</option>
 
     </select>
                     <button id="btnHorario" onclick="abrirHorario()">Horários</button>
@@ -1558,26 +1552,40 @@ MENU BANDAS
 
         <div class="menu-carousel swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="#"><img
-                            src="https://github.com/paginasvendas/gestaodedespesaspessoal/blob/main/metallica.jpg?raw=true">
-                        <p>Metallica</p>
-                    </a></div>
-                <div class="swiper-slide"><a href="#"><img
-                            src="https://github.com/paginasvendas/gestaodedespesaspessoal/blob/main/54294_iron_maiden.jpg?raw=true">
-                        <p>Iron Maiden</p>
-                    </a></div>
-                <div class="swiper-slide"><a href="#"><img
-                            src="https://github.com/paginasvendas/gestaodedespesaspessoal/blob/main/50720_ac_dc.jpg?raw=true">
-                        <p>AC/DC</p>
-                    </a></div>
-                <div class="swiper-slide"><a href="#"><img
-                            src="https://github.com/paginasvendas/vendadecamisetas/blob/main/RAMONES1.jpg?raw=true">
-                        <p>Ramones</p>
-                    </a></div>
-                                    <div class="swiper-slide"><a href="#"><img
-                            src="https://github.com/paginasvendas/vendadecamisetas/blob/main/Guns-N-Roses-Emblema.jpg?raw=true">
-                        <p>Guns In Roses</p>
-                    </a></div>
+
+                <div class="swiper-slide">
+    <a href="javascript:void(0)" onclick="filtrarPorBanda('metallica')">
+        <img src="https://github.com/paginasvendas/gestaodedespesaspessoal/blob/main/metallica.jpg?raw=true">
+        <p>Metallica</p>
+    </a>
+</div>
+                <div class="swiper-slide">
+    <a href="javascript:void(0)" onclick="filtrarPorBanda('iron maiden')">
+        <img src="https://github.com/paginasvendas/gestaodedespesaspessoal/blob/main/54294_iron_maiden.jpg?raw=true">
+        <p>Iron Maiden</p>
+    </a>
+</div>
+
+                <div class="swiper-slide">
+    <a href="javascript:void(0)" onclick="filtrarPorBanda('ac/dc')">
+        <img src="https://github.com/paginasvendas/gestaodedespesaspessoal/blob/main/50720_ac_dc.jpg?raw=true">
+        <p>AC/DC</p>
+    </a>
+</div>
+
+                <div class="swiper-slide">
+    <a href="javascript:void(0)" onclick="filtrarPorBanda('ramones')">
+        <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/RAMONES1.jpg?raw=true">
+        <p>Ramones</p>
+    </a>
+</div>
+
+                                    <div class="swiper-slide">
+    <a href="javascript:void(0)" onclick="filtrarPorBanda('guns in roses')">
+        <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/Guns-N-Roses-Emblema.jpg?raw=true">
+        <p>Guns In Roses</p>
+    </a>
+</div>
             </div>
 
             <!-- Botões de navegação -->
@@ -1619,7 +1627,7 @@ MENU BANDAS
 
 
             <!-- CAIXA 12 -->
-            <div class="card" data-banda="CAMISETA IRON MAIDEN" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
+            <div class="card" data-banda="IRON MAIDEN" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
 
                 <div class="etiqueta">+ Vendido</div>
 
@@ -1649,7 +1657,7 @@ MENU BANDAS
 
 
             <!-- CAIXA 15 -->
-            <div class="card" data-banda="CAMISETA GUNS IN ROSES" onclick="selecionarProduto('CAMISETA GUNS IN ROSES')">
+            <div class="card" data-banda="GUNS IN ROSES" onclick="selecionarProduto('CAMISETA GUNS IN ROSES')">
 
                 <div class="etiqueta-nov">Novidade</div>
 
@@ -1658,7 +1666,7 @@ MENU BANDAS
 
                         <div class="swiper-slide">
                             <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/GUNS%20IN%20ROSES.jpeg?raw=true"
-                                alt="CAMISETA GUNS N' ROSES">
+                                alt="CAMISETA GUNS IN ROSES">
                         </div>
 
                         <div class="swiper-slide">
@@ -1678,7 +1686,7 @@ MENU BANDAS
             </div>
 
 
-            <div class="card" data-banda="CAMISETA IRON MAIDEN EDIÇÃO ESP" onclick="selecionarProduto('CAMISETA IRON MAIDEN EDIÇÃO ESP')">
+            <div class="card" data-banda="IRON MAIDEN" onclick="selecionarProduto('CAMISETA IRON MAIDEN EDIÇÃO ESP')">
 
                 <div class="etiqueta">+ Vendido</div>
 
@@ -1708,7 +1716,7 @@ MENU BANDAS
 
 
             <!-- CAIXA 30 -->
-            <div class="card" data-banda="CAMISETA METALLICA" onclick="selecionarProduto('CAMISETA METALLICA')">
+            <div class="card" data-banda="METALLICA" onclick="selecionarProduto('CAMISETA METALLICA')">
 
                 <div class="swiper produtoSwiper">
                     <div class="swiper-wrapper">
@@ -1736,7 +1744,7 @@ MENU BANDAS
 
 
             <!-- CAIXA 50 -->
-            <div class="card" data-banda="CAMISETA RAMONES" onclick="selecionarProduto('CAMISETA RAMONES')">
+            <div class="card" data-banda="RAMONES" onclick="selecionarProduto('CAMISETA RAMONES')">
 
 
                 <div class="swiper produtoSwiper">
@@ -3233,21 +3241,22 @@ function filtrarProdutos() {
     let filtro = document
         .getElementById("selectBandas")
         .value
-        .toLowerCase();
+        .toLowerCase()
+        .trim();
 
     let cards = document.querySelectorAll(".card");
 
     cards.forEach(card => {
 
-        let nomeProduto = card
-            .innerText
-            .toLowerCase();
+        let banda = (card.dataset.banda || "")
+            .toLowerCase()
+            .trim();
 
         if (filtro === "todos") {
 
             card.style.display = "block";
 
-        } else if (nomeProduto.includes(filtro)) {
+        } else if (banda.includes(filtro)) {
 
             card.style.display = "block";
 
@@ -3260,6 +3269,28 @@ function filtrarProdutos() {
 
 }
 
+
+function filtrarPorBanda(banda) {
+
+    document.getElementById("selectBandas").value = banda;
+
+    filtrarProdutos();
+
+    requestAnimationFrame(() => {
+
+        const container = document.querySelector(".container-cards");
+
+        if (!container) return;
+
+        const top = container.offsetTop - 100;
+
+        window.scrollTo({
+            top: top,
+            behavior: "smooth"
+        });
+
+    });
+}
 
 
 
