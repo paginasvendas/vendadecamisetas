@@ -3252,21 +3252,27 @@ function filtrarProdutos() {
             .toLowerCase()
             .trim();
 
-        if (filtro === "todos") {
-
+        if (filtro === "todos" || banda.includes(filtro)) {
             card.style.display = "block";
-
-        } else if (banda.includes(filtro)) {
-
-            card.style.display = "block";
-
         } else {
-
             card.style.display = "none";
         }
 
     });
 
+    // 🔥 AQUI ESTÁ A CORREÇÃO
+    requestAnimationFrame(() => {
+
+        const container = document.querySelector(".container-cards");
+
+        if (!container) return;
+
+        window.scrollTo({
+            top: container.offsetTop - 100,
+            behavior: "smooth"
+        });
+
+    });
 }
 
 
