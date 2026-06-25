@@ -1312,6 +1312,16 @@ MENU BANDAS
     color:#fff;
 }
 
+
+#infoFreteGratis{
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+    margin:10px 0;
+    transition:.3s;
+}
+
     </style>
 </head>
 
@@ -1910,6 +1920,9 @@ MENU BANDAS
 
 
         <h3><i class="fas fa-motorcycle mr-2"></i> Forma de Entrega:</h3>
+
+<div id="infoFreteGratis"></div>
+
         <label><input type="radio" name="entrega" value="retirada" onclick="selecionarEntrega('retirada')">
             Retirar no Local</label>
         <label><input type="radio" name="entrega" value="entrega" onclick="selecionarEntrega('entrega')">
@@ -1920,7 +1933,7 @@ MENU BANDAS
             <input type="text" id="rua" placeholder="Digite nome da rua">
             <input type="text" id="numero" placeholder="Digite nº da casa">
             <input type="text" id="bairro" placeholder="Digite o bairro">
-            <p>Taxa de Entrega: R$ <span id="taxaEntrega">10.00</span></p>
+            <p id="linhaTaxaEntrega">Taxa de Entrega: R$ <span id="taxaEntrega">10.00</span></p>
         </div>
 
         <label for="horarioRetirada">*Agende seu pedido <span style="color: red;">(obrigatório)</span>
@@ -2001,6 +2014,7 @@ MENU BANDAS
         let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
         let pedidoNumero = parseInt(localStorage.getItem("pedidoNumero")) || 1;
         let taxaEntrega = 10.00;
+        let valorFreteGratis = 120.00; // acima de R$150 frete grátis
         let totalPedido = 0;
         let entregaSelecionada = "retirada";
 
@@ -2541,6 +2555,40 @@ function mostrarCheckout() {
     const valorFinal = calcularTotalFinal();
 const pixCode = gerarPixCopiaECola(valorFinal);
 document.getElementById("chavePix").innerText = pixCode;
+
+const infoFrete = document.getElementById("infoFreteGratis");
+
+let totalProdutos = carrinho.reduce(
+    (t, item) => t + item.precoTotal,
+    0
+);
+
+const linhaTaxaEntrega =
+    document.getElementById("linhaTaxaEntrega");
+
+if (totalProdutos >= valorFreteGratis) {
+
+    infoFrete.innerHTML =
+        "🎉 Você ganhou Frete Grátis!";
+
+    infoFrete.style.background = "#28a745";
+    infoFrete.style.color = "#fff";
+
+    linhaTaxaEntrega.style.display = "none";
+
+} else {
+
+    let falta = valorFreteGratis - totalProdutos;
+
+    infoFrete.innerHTML =
+        `🛒 Faltam R$ ${falta.toFixed(2)} para ganhar Frete Grátis`;
+
+    infoFrete.style.background = "#d4a017";
+    infoFrete.style.color = "#4c2a00";
+
+    linhaTaxaEntrega.style.display = "block";
+}
+
 }
 
 
@@ -2621,7 +2669,12 @@ document.getElementById("chavePix").innerText = pixCode;
 
             let totalProdutos = carrinho.reduce((t, item) => t + item.precoTotal, 0);
             let totalPedidoFinal = totalProdutos;
-            if (entrega === "entrega") totalPedidoFinal += taxaEntrega;
+            if (
+    entrega === "entrega" &&
+    totalProdutos < valorFreteGratis
+) {
+    totalPedidoFinal += taxaEntrega;
+}
 
             let mensagem =
                 `Pedido *#${pedidoNumero}*
@@ -2646,7 +2699,19 @@ document.getElementById("chavePix").innerText = pixCode;
             });
 
             mensagem += `Total produtos: R$ ${totalProdutos.toFixed(2)}\n`;
-            if (entrega === "entrega") mensagem += `Taxa de entrega: R$ ${taxaEntrega.toFixed(2)}\n`;
+            if (entrega === "entrega") {
+
+    if (totalProdutos >= valorFreteGratis) {
+
+        mensagem += `Taxa de entrega: GRATIS\n`;
+
+    } else {
+
+        mensagem += `Taxa de entrega: R$ ${taxaEntrega.toFixed(2)}\n`;
+
+    }
+
+}
             mensagem += `Total geral: R$ ${totalPedidoFinal.toFixed(2)}\n\n`;
 
             const pixCheckbox = document.querySelector('input[name="pagamento"][value="Pix"]');
@@ -3154,9 +3219,16 @@ document.getElementById("chavePix").innerText = pixCode;
 /*chave pix copia e cola*/
 
 function calcularTotalFinal() {
-    let totalProdutos = carrinho.reduce((t, item) => t + item.precoTotal, 0);
 
-    if (entregaSelecionada === "entrega") {
+    let totalProdutos = carrinho.reduce(
+        (t, item) => t + item.precoTotal,
+        0
+    );
+
+    if (
+        entregaSelecionada === "entrega" &&
+        totalProdutos < valorFreteGratis
+    ) {
         return totalProdutos + taxaEntrega;
     }
 
