@@ -1197,6 +1197,8 @@ width: 100px;
     margin-top: 35px!important;
 } 
 
+
+
 /* Container principal da chave PIX */
 #pixChave {
     display: flex;               /* alinha ícone, texto e botão na horizontal */
@@ -1320,6 +1322,47 @@ MENU BANDAS
     font-weight:bold;
     margin:10px 0;
     transition:.3s;
+}
+
+
+.card.indisponivel {
+    position: relative;
+    pointer-events: none;
+    padding-bottom: 20px;
+        opacity: 0.75;
+}
+
+.card.indisponivel .btn-whats-indisponivel {
+    pointer-events: auto;
+}
+
+.etiqueta-indisponivel {
+    position: absolute;
+    top: 10px;
+    background: #e53935;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.btn-whats-indisponivel {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #25D366!important;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    width: 85%;
+    box-sizing: border-box;
 }
 
     </style>
@@ -1667,31 +1710,40 @@ MENU BANDAS
 
 
             <!-- CAIXA 15 -->
-            <div class="card" data-banda="GUNS IN ROSES" onclick="selecionarProduto('CAMISETA GUNS IN ROSES')">
+            <div class="card indisponivel" data-banda="GUNS IN ROSES">
 
-                <div class="swiper produtoSwiper">
-                    <div class="swiper-wrapper">
+    <div class="etiqueta-indisponivel">Indisponível</div>
 
-                        <div class="swiper-slide">
-                            <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/GUNS%20IN%20ROSES.jpeg?raw=true"
-                                alt="CAMISETA GUNS IN ROSES">
-                        </div>
+    <div class="swiper produtoSwiper">
+        <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/GUNS3.jpeg?raw=true"
-                                alt="CAMISETA GUNS IN ROSES">
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-pagination"></div>
-                </div>
-
-                <div class="info">
-                    <p class="nome-produto">CAMISETA GUNS IN ROSES</p>
-                    <p class="preco"><span>Preço</span> R$60,00</p>
-                </div>
+            <div class="swiper-slide">
+                <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/GUNS%20IN%20ROSES.jpeg?raw=true"
+                    alt="CAMISETA GUNS IN ROSES">
             </div>
+
+            <div class="swiper-slide">
+                <img src="https://github.com/paginasvendas/vendadecamisetas/blob/main/GUNS3.jpeg?raw=true"
+                    alt="CAMISETA GUNS IN ROSES">
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="info">
+        <p class="nome-produto">CAMISETA GUNS IN ROSES</p>
+        <p class="preco"><span>Preço</span> R$60,00</p>
+    </div>
+
+<a class="btn-whats-indisponivel"
+   href="https://wa.me/55035997378247?text=Ol%C3%A1!%20Me%20avise%20quando%20a%20CAMISETA%20GUNS%20IN%20ROSES%20estiver%20dispon%C3%ADvel."
+   target="_blank">
+    Avise-me
+</a>
+
+</div>
 
 
             <div class="card" data-banda="IRON MAIDEN" onclick="selecionarProduto('CAMISETA IRON MAIDEN EDIÇÃO ESP')">
