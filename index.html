@@ -86,7 +86,7 @@
             right: 2px;
             /*background-color: #000;*/
             color: #fff;
-            font-size: 12px;
+            font-size: 0.6em;
             font-weight: bold;
             padding: 4px 8px;
             border-radius: 50%;
@@ -1125,72 +1125,11 @@ width: 100px;
             object-fit: cover;
         }
 
-        /* ============================= */
-        /* VIDEO POPUP HOME */
-        /* ============================= */
 
-        .popup-video-home {
-            position: fixed;
-            bottom: 20px;
-            z-index: 9999;
 
-            /* largura fluida controlada */
-            width: clamp(110px, 12vw, 160px);
-        }
 
-        /* Desktop (layout centralizado 1040px) */
-        @media (min-width: 1040px) {
-            .popup-video-home {
-                left: calc((100% - 1040px) / 2 + 20px);
-            }
-        }
 
-        /* Mobile */
-        @media (max-width: 1039px) {
-            .popup-video-home {
-                left: 15px;
-            }
-        }
 
-        /* Conteúdo do vídeo */
-        .popup-conteudo {
-            position: relative;
-            background: #2d2d2d;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-
-            /* Mantém proporção perfeita */
-            aspect-ratio: 9 / 16;
-            /* Se for horizontal troque para 16 / 9 */
-        }
-
-        /* Vídeo */
-        .popup-conteudo video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Botão fechar */
-        .fechar-popup {
-            position: absolute;
-            top: 6px;
-            right: 6px;
-            background: #1e1e1e;
-            color: #ffffff;
-            border: none;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            font-size: 14px;
-            cursor: pointer;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         .lfCQiA {
     margin-bottom: 18px!important;
@@ -1638,8 +1577,9 @@ MENU BANDAS
             </div>
 
 
-            <!-- CAIXA 12 -->
-            <div class="card" data-banda="IRON MAIDEN" onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
+            <!--PRODUTO INDISPONIVEL <div class="card"data-banda="IRON MAIDEN"onclick="event.stopPropagation(); return false;"style="filter:grayscale(100%) brightness(70%); opacity:0.5; cursor:not-allowed;">-->
+            <div class="card"data-banda="IRON MAIDEN"onclick="selecionarProduto('CAMISETA IRON MAIDEN')">
+            
 
                 <div class="etiqueta">+ Vendido</div>
 
@@ -1996,17 +1936,6 @@ MENU BANDAS
         <button onclick="adicionarAoCarrinho()">Adicionar ao carrinho</button>
     </div>
 
-    <!-- video home -->
-    <div id="popupVideoHome" class="popup-video-home">
-        <div class="popup-conteudo">
-            <button onclick="fecharPopup()" class="fechar-popup">×</button>
-            <video autoplay muted loop playsinline>
-                <source
-                    src="https://youtu.be/hTWKbfoikeg?list=RDhTWKbfoikeg"
-                    type="video/mp4">
-            </video>
-        </div>
-    </div>
 
 
     <script>
@@ -3164,37 +3093,6 @@ if (totalProdutos >= valorFreteGratis) {
             });
         });
 
-
-
-        //video home
-        const popup = document.getElementById("popupVideoHome");
-
-        let popupFechado = false;
-
-        function fecharPopup() {
-            popup.style.display = "none";
-            popupFechado = true; // impede reabrir
-        }
-
-        function verificarPopup() {
-
-            const produto = document.getElementById("produtoSelecionado");
-            const carrinho = document.getElementById("carrinho");
-            const checkout = document.getElementById("checkout");
-
-            const estaNaHome =
-                produto.classList.contains("hidden") &&
-                carrinho.classList.contains("hidden") &&
-                checkout.classList.contains("hidden");
-
-            if (estaNaHome && !popupFechado) {
-                popup.style.display = "block";
-            } else {
-                popup.style.display = "none";
-            }
-        }
-
-        setInterval(verificarPopup, 300);
 
         //esconder avaliações
         function controlarReviewsHome() {
