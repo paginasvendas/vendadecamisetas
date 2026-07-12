@@ -2,8 +2,36 @@
 <html lang="pt-br">
 
 <head>
+<head>
+
     <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <meta name="color-scheme" content="light">
+
+    <meta name="theme-color" content="#000000">
+
+    <meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self';
+script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+img-src 'self' data: https:;
+font-src 'self' https://cdnjs.cloudflare.com data:;
+connect-src 'self' https:;
+object-src 'none';
+base-uri 'self';
+frame-ancestors 'none';
+form-action 'self';
+upgrade-insecure-requests;
+">
+
+
     <title>Camisetas de bandas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -820,13 +848,13 @@ width: 100px;
             padding: 10px 12px;
             font-size: 15px;
             border: 1.8px solid #000;
-            /* tom parecido com seu tema */
             border-radius: 8px;
             background-color: #fff;
             color: #333;
             cursor: pointer;
             font-family: Arial, sans-serif;
             transition: border-color 0.3s ease;
+            margin-bottom: 50px;
         }
 
         select#horarioRetirada:focus {
@@ -1215,7 +1243,6 @@ width: 100px;
                 font-size: 14px;
                 padding: 8px 10px;
                 width: 80%;
-                margin-bottom: 40px;
                 color: #000;
             }
         }
@@ -1729,7 +1756,7 @@ MENU BANDAS
                     <h4>Contato</h4>
                     <p>
                         <i class="fab fa-whatsapp mr-2 pt-2" style="margin-right:5px;font-size:1em;"></i>
-                        <a href="https://wa.me/5535997378247" target="_blank">
+                        <a href="https://wa.me/5535997378247" target="_blank" rel="noopener noreferrer">
                             (35) 99737-8247
                         </a>
                     </p>
@@ -1743,7 +1770,7 @@ MENU BANDAS
                     </p>
 
                     <p class="map-links">
-                        <a href="https://maps.app.goo.gl/zeXNEQfvKMCJwLbo9" target="_blank">
+                        <a href="https://maps.app.goo.gl/zeXNEQfvKMCJwLbo9" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-map-marked-alt mr-2 pt-2" style="margin-right:5px;font-size:1em;"></i>Abrir
                             localização</a>
                         <a href="javascript:void(0)" onclick="compartilharLocalizacao()" title="Compartilhar endereço"
