@@ -1296,7 +1296,7 @@ MENU BANDAS
 
     <div class="container">
         <div class="barra-topo">
-            <span>FRETE GRÁTIS ACIMA DE R$ 120,00</span>
+            <span>ENTREGA GRÁTIS ACIMA DE R$ 120,00</span>
         </div>
         <header>
             <div class="header-container">
@@ -1971,7 +1971,7 @@ MENU BANDAS
         let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
         let pedidoNumero = parseInt(localStorage.getItem("pedidoNumero")) || 1;
         let taxaEntrega = 10.00;
-        let valorFreteGratis = 120.00; // acima de R$150 frete grátis
+        let valorFreteGratis = 120.00; // acima de R$150 entrega grátis
         let totalPedido = 0;
         let entregaSelecionada = "retirada";
 
@@ -2526,7 +2526,7 @@ const linhaTaxaEntrega =
 if (totalProdutos >= valorFreteGratis) {
 
     infoFrete.innerHTML =
-        "Você ganhou Frete Grátis!";
+        "Você Ganhou Entrega Grátis!";
 
     infoFrete.style.background = "#28a745";
     infoFrete.style.color = "#fff";
@@ -2538,7 +2538,7 @@ if (totalProdutos >= valorFreteGratis) {
     let falta = valorFreteGratis - totalProdutos;
 
     infoFrete.innerHTML =
-        `Faltam R$ ${falta.toFixed(2)} para ganhar Frete Grátis`;
+        `Faltam R$ ${falta.toFixed(2)} Para Ganhar Entrega Grátis`;
 
     infoFrete.style.background = "#d4a017";
     infoFrete.style.color = "#4c2a00";
