@@ -189,7 +189,7 @@ upgrade-insecure-requests;
         }
 
         .swiper-slide img {
-width: 100px;
+width: 115px;
     height: 80px;
     border-radius: 8px;
         }
@@ -2742,7 +2742,7 @@ if (totalProdutos >= valorFreteGratis) {
         // Inicializar Swiper do menu/carrossel de categorias
         if (document.querySelector('.menu-carousel .swiper-wrapper')) {
             new Swiper('.menu-carousel', {
-                slidesPerView: 3, // quantos slides aparecem
+                slidesPerView: 2, // quantos slides aparecem
                 spaceBetween: 10,
                 loop: true,
                 navigation: {
@@ -2750,8 +2750,14 @@ if (totalProdutos >= valorFreteGratis) {
                     prevEl: '.menu-carousel .swiper-button-prev',
                 },
                 breakpoints: {
-                    768: { slidesPerView: 4 },
-                    1024: { slidesPerView: 6 }
+                    309: { slidesPerView: 1 },
+                    340: { slidesPerView: 2 },
+                    370: { slidesPerView: 3 },
+                    500: { slidesPerView: 4 },
+                    630: { slidesPerView: 5 },
+                    768: { slidesPerView: 6 },
+                    1024: { slidesPerView: 7 },
+                    1280: { slidesPerView: 8 }
                 }
             });
         }
